@@ -36,6 +36,31 @@ let object = {
 const myfunction = function(){
     console.log("this is new era");
 }
-myfunction();
-console.log(typeof myfunction);  //function
+// myfunction();
+// console.log(typeof myfunction);  //function
 
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Stack(Primitive), Heap(Non-primitive)
+
+//stack -- If the value of reference changed the original value is not going to change bcz new copy is created.
+let userName = 'akku';
+let newUserName = userName;
+newUserName = 'patil';
+
+console.log(userName);
+console.log(newUserName);
+
+/*heap -- In heap both the user1 & user2 are going to reference the same object 
+         in heap meemory if one value changes it will affect to both the objects properties. */
+let user1 = {
+    email : 'akkupatil@gmail.com',
+    upi : 'akku@ybl'
+}
+
+let user2 = user1;
+user2.upi = 'asp@ybl3'
+user1.email = 'patil@gmail.com'
+
+console.log(user1);
+console.log(user2);
