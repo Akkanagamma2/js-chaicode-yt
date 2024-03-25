@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2 style="margin-left: 40px;">Capturing events</h2>
+    <ul class="images">
+        <li><img style="width: 200px;height:100px;" src="https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg" alt="" id="nature1"></li>
+        <li><img style="width: 200px;height:100px;" src="https://tse2.mm.bing.net/th?id=OIP.W2ZZmFD47OaU47rNNwzzUAHaEo&pid=Api&P=0&h=180" alt="" id="nature2"></li>
+        <li><img style="width: 200px;height:100px;" src="https://wallpapers.com/images/hd/nature-digital-art-88s3vri049fgl94v.jpg" alt="" id="nature3" onclick="alert('selected the nature')"></li>
+        <li><img style="width: 200px;height:100px;" src="https://images.alphacoders.com/492/492674.jpg" alt="" id="loveBirds"></li>
+        <li><img style="width: 200px;height:100px;" src="https://tse2.mm.bing.net/th?id=OIP.5kt4uysO1Rtyq3-CQmWEFAHaE8&pid=Api&P=0&h=180" alt="" id="bird"></li>
+        <li><a style="color: antiquewhite;" href="https://google.com">Google</a></li>
+    </ul>
+</body>
+<script>
+    //2-using onclick
+    // document.getElementById('loveBirds').onclick = function(){
+    //     alert('love birds are looking lovely');
+    // }
+
+    // //3-using addEventListener
+    // document.getElementById('loveBirds').addEventListener('click',function(){
+    //     alert('wood peacker loves you');
+    // })
+
+    //event propogation - default value as false.(third parameter for addeventlistener function)
+    //false - event bubbling
+    // const image = document.querySelector('.images');
+    // image.addEventListener('click',function(){
+    //     alert('event bubbling bottom to top')
+    // },false);
+
+    // image.addEventListener('click',function(){
+    //     alert('event bubbling bottom to top second event')
+    // },false);
+
+    //true- event capturing
+    const image = document.querySelector('.images');
+    // image.addEventListener('click',function(e){
+    //     alert('event capturing bottom to top')
+    //     e.stopPropagation()
+    // },true);
+
+    // document.getElementById('bird').addEventListener('click',function(){
+    //     alert('event capturing bottom to top second event')
+    //     e.stopPropagation()
+    // },false);
+
+    //preventDefault
+    document.querySelector('a').addEventListener('click',function(e){
+        e.preventDefault();
+        alert('google is not working correctly');
+    })
+
+    //remove images using remove method
+    document.querySelector('.images').addEventListener('click',function(e){
+        
+        if(e.target.tagName === 'IMG'){
+            const removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+        
+
+        // removeIt.parentNode.removeChild(removeIt);
+
+    })
+    
+
+    
+</script>
+</html>
