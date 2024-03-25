@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Chai aur Code</h3>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //arrow function
+    // setTimeout(() => {
+    //     console.log("arrow function call")
+    // }, 4000);
+
+    //passing function reference for setTimeout function
+    // const fun = function(){
+    //     document.querySelector('h3').innerHTML = 'Changed to new line';
+    // }
+    // setTimeout(fun,2000);
+
+
+    //clearTimeout will take the reference of settimeout
+    const fun = function(){
+        document.querySelector('h3').innerHTML = 'Changed to new line';
+    }
+    const settedTime = setTimeout(fun,2000);
+
+    document.getElementById('stop').addEventListener('click',function(){
+        console.log('time stopped')
+        clearTimeout(settedTime);
+    })
+</script>
+</html>
