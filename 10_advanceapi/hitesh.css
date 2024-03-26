@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 200px;
+    height: 400px;
+    border: 1px solid #fff;
+    margin: 40px;
+}
+img{
+    width: 180px;
+    height: 200px;
+    background-color: aqua;
+    margin: 10px;
+}
+h4{
+    font-size: 20px;
+    color: blanchedalmond;
+    font-style: italic;
+    margin:5px;
+}
+p{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.followers{
+    font-size: 20px;
+    color: burlywood;
+}
