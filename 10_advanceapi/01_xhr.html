@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xhr</title>
+</head>
+<body>
+    <h2>Xhr request</h2>
+</body>
+<script>
+    const requesturl = 'https://api.github.com/users/Akkanagamma2';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requesturl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const jsonResponse = JSON.parse(this.response)
+            console.log(jsonResponse)
+            console.log(jsonResponse.login)
+        }
+    }
+    xhr.send();
+
+
+</script>
+</html>
